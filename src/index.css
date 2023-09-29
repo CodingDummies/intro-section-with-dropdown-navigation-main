@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Epilogue", sans-serif;
+  background-color: hsl(0, 0%, 98%);
+}
+
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.features {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  right: 0rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  margin-top: 0.75rem;
+  box-shadow: 16px 42px 182px -47px rgba(0, 0, 0, 0.54);
+  min-width: 11rem;
+}
+
+.features.active {
+  display: flex;
+}
+
+.company {
+  position: absolute;
+  border-radius: 0.75rem;
+  box-shadow: 16px 42px 182px -47px rgba(0, 0, 0, 0.54);
+  padding: 1rem 1.25rem;
+  min-width: 8rem;
+  margin-top: 0.75rem;
+  background-color: #fff;
+  display: none;
+}
+
+.company.active {
+  display: block;
+}
+
+.open-nav {
+  position: absolute;
+  top: -100%;
+  right: 0;
+  width: 65%;
+  height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+  max-width: 20rem;
+}
+
+.open-nav.active {
+  transform: translateY(100%);
+}
+
+.wrapper {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsl(0, 0%, 8%, 0.5);
+}
+
+.wrapper.active {
+  display: block;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.1rem;
+  }
+}
